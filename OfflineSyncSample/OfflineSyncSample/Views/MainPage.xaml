@@ -11,8 +11,7 @@
         <ListView
             ItemsSource="{Binding BookList}"
             VerticalOptions="FillAndExpand"
-            HorizontalOptions="FillAndExpand"
-            SelectedItem="{Binding BookSelected}">
+            HorizontalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell

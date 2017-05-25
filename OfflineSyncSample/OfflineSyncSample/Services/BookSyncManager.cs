@@ -13,10 +13,6 @@ namespace OfflineSyncSample.Services
     public class BookSyncManager : BindableBase, IBookSyncManager
     {
         MobileServiceClient _client;
-        public MobileServiceClient CurrentClient
-        {
-            get { return _client; }
-        }
         IMobileServiceSyncTable<BookItem> _bookTable;
 
         const string _offlineDbPath = @"localstore.db";
@@ -30,28 +26,30 @@ namespace OfflineSyncSample.Services
             _client = new MobileServiceClient(url);
 
             //同期をおこなう準備
-            InitSync().Wait();
+            InitSync();
         }
 
         //同期をおこなう準備
-        async Task InitSync()
+        void InitSync()
         {
             //TodoItemと同様の型のSQLiteのテーブルを作成する
             var store = new MobileServiceSQLiteStore(_offlineDbPath);
             store.DefineTable<BookItem>();
 
             //同期をおこなうローカルテーブルとバックエンドのテーブルを関連付ける
-            await _client.SyncContext.InitializeAsync(store);
+             _client.SyncContext.InitializeAsync(store);
 
             //_bookTableはIMobileServiceTableではなくてIMobileServiceSyncTable型
             _bookTable = _client.GetSyncTable<BookItem>();
+            if (_bookTable == null)
+                throw new NullReferenceException("BookItemテーブルを同期の設定ができない");
         }
 
         //同期処理をおこなう
         private async Task SyncAsync()
         {
             await _client.SyncContext.PushAsync();
-            await _bookTable.PullAsync("BookItem", _bookTable.CreateQuery());
+            await _bookTable.PullAsync("allTodoItems", _bookTable.CreateQuery());
         }
 
         //全件を取得する

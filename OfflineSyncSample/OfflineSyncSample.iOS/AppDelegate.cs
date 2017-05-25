@@ -24,7 +24,10 @@ namespace OfflineSyncSample.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+			//Azure Mobile SDK
+			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+
+			global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

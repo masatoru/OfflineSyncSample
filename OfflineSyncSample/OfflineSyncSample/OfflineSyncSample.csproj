@@ -39,6 +39,7 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Services\BookSyncManager.cs" />
     <Compile Include="Models\BookItem.cs" />
+    <Compile Include="Services\IBookSyncManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">

@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;
+using OfflineSyncSample.Models;
+using Prism.Mvvm;
 
-namespace OfflineSyncSample.Models
+namespace OfflineSyncSample.Services
 {
-    public class BookSyncManager
+    public class BookSyncManager : BindableBase, IBookSyncManager
     {
         MobileServiceClient _client;
         public MobileServiceClient CurrentClient

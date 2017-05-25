@@ -1,6 +1,8 @@
 ﻿using Prism.Unity;
 using OfflineSyncSample.Views;
 using Xamarin.Forms;
+using OfflineSyncSample.Services;
+using Microsoft.Practices.Unity;
 
 namespace OfflineSyncSample
 {
@@ -19,6 +21,8 @@ namespace OfflineSyncSample
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
-        }
+			Container.RegisterType<IBookSyncManager, BookSyncManager>(new ContainerControlledLifetimeManager());
+
+		}
     }
 }

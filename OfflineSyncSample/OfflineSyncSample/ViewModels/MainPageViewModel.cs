@@ -15,16 +15,18 @@ namespace OfflineSyncSample.ViewModels
     {
 		public ObservableCollection<BookItem> BookList { get; set; }
         IBookSyncManager _bookmg;
+        INavigationService _navigationService;
 
-        public MainPageViewModel(IBookSyncManager bookmg)
+		public MainPageViewModel(IBookSyncManager bookmg, INavigationService navigationService)
         {
             _bookmg = bookmg;
             BookList = new ObservableCollection<BookItem>();
-            InitData().Wait();
+            _navigationService = navigationService;
+            InitData();
         }
-        async Task InitData(){
+        async void InitData(){
             BookList.Clear();
-			var lst = await _bookmg.GetAllItems(false);
+			var lst = await _bookmg.GetAllItems(true);
 			foreach (var book in lst)
 				BookList.Add(book);
 		}

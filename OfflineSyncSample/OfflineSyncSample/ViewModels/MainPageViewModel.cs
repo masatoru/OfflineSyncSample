@@ -69,6 +69,9 @@ namespace OfflineSyncSample.ViewModels
                 .ObservesProperty(() => IsConnected);
 			this.ViewHeadingCommand = new DelegateCommand(ViewHeading);
 
+			//起動時は同期しない（クライアントのデータを表示する）
+			ViewData(false);
+
 		}
 
         //ネットワークの状態を表示
@@ -83,7 +86,7 @@ namespace OfflineSyncSample.ViewModels
         /// 一覧表示する
         /// </summary>
         /// <param name="isSync">バックエンドと同期する場合はtrue</param>
-        async Task ViewData(bool isSync)
+        async void ViewData(bool isSync)
         {
             BookList.Clear();
             var lst = await _bookmg.GetAllItems(isSync);
@@ -92,19 +95,19 @@ namespace OfflineSyncSample.ViewModels
         }
 
         //画面が表示される時に初期化する
-        public async void OnAppearing()
+        public void OnAppearing()
         {
             IsConnected = CrossConnectivity.Current.IsConnected;
             UpdateNetworkStatus();
 
-            //起動時は同期しない（クライアントのデータを表示する）
-            await ViewData(false);
+            ////起動時は同期しない（クライアントのデータを表示する）
+            //await ViewData(false);
         }
 
         //バックエンドと同期する
         async Task DoSync()
         {
-            await ViewData(true);
+            ViewData(true);
         }
 
         private bool CanExecuteDoSyncCommand()

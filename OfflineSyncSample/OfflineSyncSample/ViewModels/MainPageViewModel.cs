@@ -18,10 +18,18 @@ namespace OfflineSyncSample.ViewModels
     {
         public ObservableCollection<BookItem> BookList { get; set; }
         public ICommand SyncCommand { get; }
-		public ICommand ViewHeadingCommand { get; }
+        public ICommand ViewHeadingCommand { get; }
 
-		IBookSyncManager _bookmg;
+        IBookSyncManager _bookmg;
         INavigationService _navigationService;
+
+		//カスタムインディケータ　https://github.com/shunsuke-kawai/decode2017_MW08
+		private bool _customIsVisible = false;
+        public bool CustomIsVisible
+        {
+            get { return _customIsVisible; }
+            set { SetProperty(ref _customIsVisible, value); }
+        }
 
         private bool _isConnected;
         public bool IsConnected
@@ -67,12 +75,12 @@ namespace OfflineSyncSample.ViewModels
             this.SyncCommand =
                 new DelegateCommand(DoSync, CanExecuteDoSyncCommand)
                 .ObservesProperty(() => IsConnected);
-			this.ViewHeadingCommand = new DelegateCommand(ViewHeading);
+            this.ViewHeadingCommand = new DelegateCommand(ViewHeading);
 
-			//起動時は同期しない（クライアントのデータを表示する）
-			ViewData(false);
+            //起動時は同期しない（クライアントのデータを表示する）
+            ViewData(false);
 
-		}
+        }
 
         //ネットワークの状態を表示
         void UpdateNetworkStatus()
@@ -88,11 +96,15 @@ namespace OfflineSyncSample.ViewModels
         /// <param name="isSync">バックエンドと同期する場合はtrue</param>
         async void ViewData(bool isSync)
         {
+            CustomIsVisible = true;
+
             BookList.Clear();
             var lst = await _bookmg.GetAllItems(isSync);
             foreach (var book in lst)
                 BookList.Add(book);
-        }
+
+            CustomIsVisible = false;
+		}
 
         //画面が表示される時に初期化する
         public void OnAppearing()

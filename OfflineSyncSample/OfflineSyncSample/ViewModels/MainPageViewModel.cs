@@ -65,7 +65,7 @@ namespace OfflineSyncSample.ViewModels
 
             //ネットワークにつながっている時だけ同期ボタンを押せる
             this.SyncCommand =
-                new DelegateCommand(async () => { await DoSync(); }, CanExecuteDoSyncCommand)
+                new DelegateCommand(DoSync, CanExecuteDoSyncCommand)
                 .ObservesProperty(() => IsConnected);
 			this.ViewHeadingCommand = new DelegateCommand(ViewHeading);
 
@@ -105,7 +105,7 @@ namespace OfflineSyncSample.ViewModels
         }
 
         //バックエンドと同期する
-        async Task DoSync()
+        void DoSync()
         {
             ViewData(true);
         }

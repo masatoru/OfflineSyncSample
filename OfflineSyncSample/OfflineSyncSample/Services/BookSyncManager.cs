@@ -6,6 +6,7 @@ using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;
 using OfflineSyncSample.Models;
+using Plugin.Connectivity;
 using Prism.Mvvm;
 
 namespace OfflineSyncSample.Services
@@ -37,7 +38,7 @@ namespace OfflineSyncSample.Services
             store.DefineTable<BookItem>();
 
             //同期をおこなうローカルテーブルとバックエンドのテーブルを関連付ける
-             _client.SyncContext.InitializeAsync(store);
+            _client.SyncContext.InitializeAsync(store);
 
             //_bookTableはIMobileServiceTableではなくてIMobileServiceSyncTable型
             _bookTable = _client.GetSyncTable<BookItem>();
@@ -57,10 +58,13 @@ namespace OfflineSyncSample.Services
         {
             try
             {
+                //バックエンドと同期する
                 if (syncItems)
                 {
                     await this.SyncAsync();
                 }
+
+                //ローカルのストア（SQLite）からデータを取得する
                 var lst = await _bookTable.ToEnumerableAsync();
                 return new ObservableCollection<BookItem>(lst);
             }

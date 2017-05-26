@@ -3,9 +3,14 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    xmlns:behavior="clr-namespace:OfflineSyncSample.Behaviors;assembly=OfflineSyncSample"
     prism:ViewModelLocator.AutowireViewModel="True"
     x:Class="OfflineSyncSample.Views.MainPage"
-    Title="MainPage">
+    Title="MainPage"
+    Padding="10,20,10,10">
+    <ContentPage.Behaviors>
+        <behavior:NotifyNavigationBehavior />
+    </ContentPage.Behaviors>
     <StackLayout
         Orientation="Vertical">
         <ListView
@@ -20,5 +25,15 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <StackLayout
+            Orientation="Vertical"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Button
+                Text="同期する"
+                Command="{Binding SyncCommand}" />
+            <Label
+                Text="{Binding Status}" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>

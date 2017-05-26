@@ -18,8 +18,9 @@ namespace OfflineSyncSample.ViewModels
     {
         public ObservableCollection<BookItem> BookList { get; set; }
         public ICommand SyncCommand { get; }
+		public ICommand ViewHeadingCommand { get; }
 
-        IBookSyncManager _bookmg;
+		IBookSyncManager _bookmg;
         INavigationService _navigationService;
 
         private bool _isConnected;
@@ -35,14 +36,21 @@ namespace OfflineSyncSample.ViewModels
             set { SetProperty(ref _status, value); }
         }
 
+        private BookItem _bookSelected;
+        public BookItem BookSelected
+        {
+            get { return this._bookSelected; }
+            set { SetProperty(ref _bookSelected, value); }
+        }
+
         public MainPageViewModel(IBookSyncManager bookmg, INavigationService navigationService)
         {
             _bookmg = bookmg;
             BookList = new ObservableCollection<BookItem>();
-			_navigationService = navigationService;
+            _navigationService = navigationService;
 
-			//ネットワークの接続状態が変更されたことを検知する
-			CrossConnectivity.Current.ConnectivityChanged += (sender, args) =>
+            //ネットワークの接続状態が変更されたことを検知する
+            CrossConnectivity.Current.ConnectivityChanged += (sender, args) =>
             {
                 IsConnected = CrossConnectivity.Current.IsConnected;
                 UpdateNetworkStatus();
@@ -59,13 +67,15 @@ namespace OfflineSyncSample.ViewModels
             this.SyncCommand =
                 new DelegateCommand(async () => { await DoSync(); }, CanExecuteDoSyncCommand)
                 .ObservesProperty(() => IsConnected);
-        }
+			this.ViewHeadingCommand = new DelegateCommand(ViewHeading);
+
+		}
 
         //ネットワークの状態を表示
         void UpdateNetworkStatus()
         {
             var connected = CrossConnectivity.Current.IsConnected ? "オンライン" : "オフライン";
-            var type = CrossConnectivity.Current.IsConnected ? $"種別={ CrossConnectivity.Current.ConnectionTypes.FirstOrDefault()}":"" ;
+            var type = CrossConnectivity.Current.IsConnected ? $"種別={ CrossConnectivity.Current.ConnectionTypes.FirstOrDefault()}" : "";
             Status = $"{connected} {type}";
         }
 
@@ -101,6 +111,16 @@ namespace OfflineSyncSample.ViewModels
         {
             return IsConnected;
         }
+
+        async void ViewHeading()
+        {
+            var navParameters = new NavigationParameters
+            {
+                {"book", BookSelected},
+            };
+            await _navigationService.NavigateAsync("HeadingPage", navParameters);
+        }
+
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {

@@ -5,6 +5,7 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     xmlns:behavior="clr-namespace:OfflineSyncSample.Behaviors;assembly=OfflineSyncSample"
     prism:ViewModelLocator.AutowireViewModel="True"
+    xmlns:b="clr-namespace:BlueMonkey;assembly=OfflineSyncSample"
     x:Class="OfflineSyncSample.Views.MainPage"
     Title="MainPage"
     Padding="10,20,10,10">
@@ -16,7 +17,12 @@
         <ListView
             ItemsSource="{Binding BookList}"
             VerticalOptions="FillAndExpand"
-            HorizontalOptions="FillAndExpand">
+            HorizontalOptions="FillAndExpand"
+            SelectedItem="{Binding BookSelected}">
+            <ListView.Behaviors>
+                <b:ItemSelectedToCommandBehavior
+                    Command="{Binding ViewHeadingCommand}" />
+            </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell

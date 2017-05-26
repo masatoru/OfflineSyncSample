@@ -8,6 +8,7 @@ namespace OfflineSyncSample.Services
 {
     public interface IBookSyncManager : INotifyPropertyChanged
     {
-        Task<ObservableCollection<BookItem>> GetAllItems(bool syncItems = false);
+		Task<ObservableCollection<BookItem>> GetAllItems(bool syncItems = false);
+		Task<ObservableCollection<HeadingItem>> GetHeadingItems(string bookId);
 	}
 }

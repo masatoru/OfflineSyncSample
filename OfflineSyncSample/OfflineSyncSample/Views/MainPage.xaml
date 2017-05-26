@@ -21,7 +21,7 @@
                 <DataTemplate>
                     <TextCell
                         Text="{Binding Title}"
-                        Detail="{Binding Chosha}" />
+                        Detail="{Binding Company}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

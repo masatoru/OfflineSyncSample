@@ -19,9 +19,14 @@ namespace OfflineBackendSample.Controllers
         }
 
         // GET tables/BookItem
-        public IQueryable<HeadingItem> GetAllTodoItems(string bookId)
+        public IQueryable<HeadingItem> GetItemsFromBookId(string bookId)
         {
-            return Query().Where(m => m.BookId==bookId);
+            return Query().Where(m => m.BookId == bookId);
+        }
+        // GET tables/BookItem
+        public IQueryable<HeadingItem> GetAllTodoItems()
+        {
+            return Query();
         }
 
         // GET tables/BookItem/48D68C86-6EA6-4C25-AA33-223FC9A27959

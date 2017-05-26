@@ -20,7 +20,8 @@ namespace OfflineSyncSample
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
-            Container.RegisterTypeForNavigation<MainPage>();
+			Container.RegisterTypeForNavigation<MainPage>();
+			Container.RegisterTypeForNavigation<HeadingPage>();
 			Container.RegisterType<IBookSyncManager, BookSyncManager>(new ContainerControlledLifetimeManager());
 
 		}

@@ -9,7 +9,7 @@ using OfflineBackendSample.Models;
 
 namespace OfflineBackendSample.Controllers
 {
-    public class TodoItemController : TableController<BookItem>
+    public class BookItemController : TableController<BookItem>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
         {

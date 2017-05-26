@@ -1,4 +1,4 @@
-using Microsoft.Azure.Mobile.Server.Tables;
+ï»¿using Microsoft.Azure.Mobile.Server.Tables;
 using OfflineBackendSample.DataObjects;
 
 namespace OfflineBackendSample.Migrations
@@ -29,35 +29,35 @@ namespace OfflineBackendSample.Migrations
               new BookItem
               {
                   Id = "1",
-                  Title = "C#‚É‚æ‚éiOSAAndroidAWindowsƒAƒvƒŠƒP[ƒVƒ‡ƒ“ŠJ”­“ü–å",
-                  Company = "“úŒoBPĞ"
+                  Title = "C#ã«ã‚ˆã‚‹iOSã€Androidã€Windowsã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³é–‹ç™ºå…¥é–€",
+                  Company = "æ—¥çµŒBPç¤¾"
               },
               new BookItem
               {
                   Id = "2",
-                  Title = "XamarinƒGƒLƒXƒp[ƒg—{¬“Ç–{",
-                  Company = "‹Zp•]˜_Ğ"
+                  Title = "Xamarinã‚¨ã‚­ã‚¹ãƒ‘ãƒ¼ãƒˆé¤Šæˆèª­æœ¬",
+                  Company = "æŠ€è¡“è©•è«–ç¤¾"
               },
               new BookItem
               {
                   Id = "3",
-                  Title = "Xamarin‚Å‚Í‚¶‚ß‚éƒXƒ}ƒzƒAƒvƒŠŠJ”­",
-                  Company = "HŠwĞ"
+                  Title = "Xamarinã§ã¯ã˜ã‚ã‚‹ã‚¹ãƒãƒ›ã‚¢ãƒ—ãƒªé–‹ç™º",
+                  Company = "å·¥å­¦ç¤¾"
               }, new BookItem
               {
                   Id = "4",
-                  Title = "Essential Xamarin Yin/‰A",
+                  Title = "Essential Xamarin Yin/é™°",
                   Company = "Xamaritans"
               }, new BookItem
               {
                   Id = "5",
-                  Title = "Essential Xamarin Yang/—z",
+                  Title = "Essential Xamarin Yang/é™½",
                   Company = "Xamaritans"
               }, new BookItem
               {
                   Id = "6",
-                  Title = "ƒvƒƒOƒ‰ƒ~ƒ“ƒO Xamarin ã",
-                  Company = "“úŒoBPĞ"
+                  Title = "ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚° Xamarin ä¸Š",
+                  Company = "æ—¥çµŒBPç¤¾"
               }
             );
             context.HeadingItems.AddOrUpdate(
@@ -66,85 +66,221 @@ namespace OfflineBackendSample.Migrations
                 {
                     Id = "001",
                     BookId = "1",
-                    Title = "‘æ‚PÍ@ƒNƒƒXƒvƒ‰ƒbƒgƒtƒH[ƒ€ŠJ”­‚ğC#‚Å"
+                    Title = "ç¬¬ï¼‘ç« ã€€ã‚¯ãƒ­ã‚¹ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ é–‹ç™ºã‚’C#ã§"
                 },
                 new HeadingItem()
                 {
                     Id = "002",
                     BookId = "1",
-                    Title = "‘æ‚QÍ@Xamarin‚Æ‚Í"
+                    Title = "ç¬¬ï¼’ç« ã€€Xamarinã¨ã¯"
                 },
                 new HeadingItem()
                 {
                     Id = "003",
                     BookId = "1",
-                    Title = "‘æ‚RÍ@ŠJ”­ŠÂ‹«‚ğ®‚¦‚é"
+                    Title = "ç¬¬ï¼“ç« ã€€é–‹ç™ºç’°å¢ƒã‚’æ•´ãˆã‚‹"
                 },
                 new HeadingItem()
                 {
                     Id = "004",
                     BookId = "1",
-                    Title = "‘æ‚SÍ@ƒNƒƒXƒvƒ‰ƒbƒgƒtƒH[ƒ€ŠJ”­‚ğC#‚Å"
+                    Title = "ç¬¬ï¼”ç« ã€€ã‚¯ãƒ­ã‚¹ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ é–‹ç™ºã‚’C#ã§"
                 },
                 new HeadingItem()
                 {
                     Id = "005",
                     BookId = "1",
-                    Title = "‘æ‚TÍ@‰æ–Ê‚ğì¬‚·‚é"
+                    Title = "ç¬¬ï¼•ç« ã€€ç”»é¢ã‚’ä½œæˆã™ã‚‹"
                 },
                 new HeadingItem()
                 {
                     Id = "006",
                     BookId = "1",
-                    Title = "‘æ‚UÍ@‹¤’ÊƒƒWƒbƒN‚ğì¬‚·‚é"
+                    Title = "ç¬¬ï¼–ç« ã€€å…±é€šãƒ­ã‚¸ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹"
                 },
                 new HeadingItem()
                 {
                     Id = "007",
                     BookId = "1",
-                    Title = "‘æ‚VÍ@ŒÂ•ÊƒƒWƒbƒN‚ğì¬‚·‚é"
+                    Title = "ç¬¬ï¼—ç« ã€€å€‹åˆ¥ãƒ­ã‚¸ãƒƒã‚¯ã‚’ä½œæˆã™ã‚‹"
                 },
                 new HeadingItem()
                 {
                     Id = "008",
                     BookId = "1",
-                    Title = "‘æ‚WÍ@ƒ[ƒJƒ‹ƒtƒ@ƒCƒ‹‚ÉƒAƒNƒZƒX‚·‚é"
+                    Title = "ç¬¬ï¼˜ç« ã€€ãƒ­ãƒ¼ã‚«ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹"
                 },
                 new HeadingItem()
                 {
                     Id = "009",
                     BookId = "1",
-                    Title = "‘æ‚XÍ@ƒ‚ƒoƒCƒ‹ƒT[ƒrƒX‚ğg‚¤"
+                    Title = "ç¬¬ï¼™ç« ã€€ãƒ¢ãƒã‚¤ãƒ«ã‚µãƒ¼ãƒ“ã‚¹ã‚’ä½¿ã†"
                 },
                 new HeadingItem()
                 {
                     Id = "010",
                     BookId = "1",
-                    Title = "‘æ10Í@‚Ü‚Æ‚ß"
+                    Title = "ç¬¬10ç« ã€€ã¾ã¨ã‚"
                 }, new HeadingItem()
                 {
                     Id = "011",
                     BookId = "2",
-                    Title = "“ÁW‚P@Xamarin‚Ì‚½‚ß‚ÌC#“ü–å"
+                    Title = "ç‰¹é›†ï¼‘ã€€Xamarinã®ãŸã‚ã®C#å…¥é–€"
                 },
                 new HeadingItem()
                 {
                     Id = "012",
                     BookId = "2",
-                    Title = "“ÁW‚Q@Xamarin‚É‚æ‚éƒNƒƒXƒvƒ‰ƒbƒgƒtƒH[ƒ€ŠJ”­"
+                    Title = "ç‰¹é›†ï¼’ã€€Xamarinã«ã‚ˆã‚‹ã‚¯ãƒ­ã‚¹ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ é–‹ç™º"
                 },
                 new HeadingItem()
                 {
                     Id = "013",
                     BookId = "2",
-                    Title = "“ÁW‚R@æl‚ª‹³‚¦‚éƒNƒƒXƒvƒ‰ƒbƒgƒtƒH[ƒ€ŠJ”­‚ÌŠÌ"
+                    Title = "ç‰¹é›†ï¼“ã€€å…ˆäººãŒæ•™ãˆã‚‹ã‚¯ãƒ­ã‚¹ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ é–‹ç™ºã®è‚"
                 },
                 new HeadingItem()
                 {
                     Id = "014",
                     BookId = "2",
-                    Title = "“ÁW‚S@ˆê•àæs‚­•ƒvƒ‰ƒbƒgƒtƒH[ƒ€ŠJ”­‚Ìƒ|ƒCƒ“ƒg"
+                    Title = "ç‰¹é›†ï¼”ã€€ä¸€æ­©å…ˆè¡Œãé»’ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ é–‹ç™ºã®ãƒã‚¤ãƒ³ãƒˆ"
+                },
+                //Xamarinã§ã¯ã˜ã‚ã‚‹ã‚¹ãƒãƒ›ã‚¢ãƒ—ãƒªé–‹ç™º
+                new HeadingItem()
+                {
+                    Id = "015",
+                    BookId = "3",
+                    Title = "ç¬¬ï¼‘ç« ã€€ã€ŒXamarinã€ã¨ã¯"
+                }, new HeadingItem()
+                {
+                    Id = "016",
+                    BookId = "3",
+                    Title = "ç¬¬ï¼’ç« ã€€ã‚·ãƒ³ãƒ—ãƒ«ãªã€ŒCSharpDemoã€ã‚¢ãƒ—ãƒªã®é–‹ç™º"
+                }, new HeadingItem()
+                {
+                    Id = "017",
+                    BookId = "3",
+                    Title = "ç¬¬ï¼“ç« ã€€ã€ŒUIã‚²ãƒ¼ãƒ ã€ã‚¢ãƒ—ãƒªã®é–‹ç™º"
+                }, new HeadingItem()
+                {
+                    Id = "018",
+                    BookId = "3",
+                    Title = "ç¬¬ï¼”ç« ã€€ã€ŒHelloã€ã‚¢ãƒ—ãƒªã®é–‹ç™º"
+                }, new HeadingItem()
+                {
+                    Id = "019",
+                    BookId = "3",
+                    Title = "ç¬¬ï¼•ç« ã€€ã€ŒZipCodeã€ã‚¢ãƒ—ãƒªã®é–‹ç™º"
+                }, new HeadingItem()
+                {
+                    Id = "020",
+                    BookId = "3",
+                    Title = "ç¬¬ï¼–ç« ã€€ã€ŒCameraDifferenceã€ã‚¢ãƒ—ãƒªã®é–‹ç™º"
+                },
+                //Essential Xamarin Yin/é™°
+                new HeadingItem()
+                {
+                    Id = "021",
+                    BookId = "4",
+                    Title = "ç¬¬ï¼‘ç« ã€€ã§ãã‚‹Xamarin.Mac"
+                }, new HeadingItem()
+                {
+                    Id = "022",
+                    BookId = "4",
+                    Title = "ç¬¬ï¼’ç« ã€€Xamarin Bluetooth Low Energyã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ç·¨"
+                }, new HeadingItem()
+                {
+                    Id = "023",
+                    BookId = "4",
+                    Title = "ç¬¬ï¼“ç« ã€€Xamarin.Android SDKè§£èª¬ï¼ˆrev.2017.3ï¼‰"
+                }, new HeadingItem()
+                {
+                    Id = "024",
+                    BookId = "4",
+                    Title = "ç¬¬ï¼”ç« ã€€Monoã§ãƒ¢ãƒã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆã‚’ç›®æŒ‡ã™"
+                },
+                //Essential Xamarin Yang/é™½
+                new HeadingItem()
+                {
+                    Id = "025",
+                    BookId = "5",
+                    Title = "ç¬¬ï¼‘ç« ã€€Xamarin.Androidã§å§‹ã‚ã‚‹ã‚¯ãƒ­ã‚¹ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ ãƒ¢ãƒã‚¤ãƒ«ã‚¢ãƒ—ãƒªé–‹ç™º"
+                }, new HeadingItem()
+                {
+                    Id = "026",
+                    BookId = "5",
+                    Title = "ç¬¬ï¼’ç« ã€€Prism for Xamarin.Formså…¥é–€ã®æ¬¡ã®é–€"
+                }, new HeadingItem()
+                {
+                    Id = "027",
+                    BookId = "5",
+                    Title = "ç¬¬ï¼“ç« ã€€é–‹ç™ºè€…ã®ãŸã‚ã®Xamariné–¢é€£ãƒªãƒã‚¸ãƒˆãƒªé›†"
+                },
+                //ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚° Xamarin ä¸Š
+                new HeadingItem()
+                {
+                    Id = "028",
+                    BookId = "6",
+                    Title = "ç¬¬ï¼‘ç« ã€€Xamarin.Formsã®ä½ç½®ã¥ã‘"
+                },
+                new HeadingItem()
+                {
+                    Id = "029",
+                    BookId = "6",
+                    Title = "ç¬¬ï¼’ç« ã€€ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®æ§‹é€ "
+                },
+                new HeadingItem()
+                {
+                    Id = "030",
+                    BookId = "6",
+                    Title = "ç¬¬ï¼“ç« ã€€ãƒ†ã‚­ã‚¹ãƒˆã‚’ã•ã‚‰ã«èª¿ã¹ã‚‹"
+                },
+                new HeadingItem()
+                {
+                    Id = "031",
+                    BookId = "6",
+                    Title = "ç¬¬ï¼”ç« ã€€ã‚¹ã‚¿ãƒƒã‚¯ã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«"
+                },
+                new HeadingItem()
+                {
+                    Id = "032",
+                    BookId = "6",
+                    Title = "ç¬¬ï¼•ç« ã€€ã‚µã‚¤ã‚ºã®æ“ä½œ"
+                },
+                new HeadingItem()
+                {
+                    Id = "033",
+                    BookId = "6",
+                    Title = "ç¬¬ï¼–ç« ã€€ãƒœã‚¿ãƒ³ã®ã‚¯ãƒªãƒƒã‚¯"
+                },
+                new HeadingItem()
+                {
+                    Id = "034",
+                    BookId = "6",
+                    Title = "ç¬¬ï¼—ç« ã€€XAMLã¨ã‚³ãƒ¼ãƒ‰"
+                },
+                new HeadingItem()
+                {
+                    Id = "035",
+                    BookId = "6",
+                    Title = "ç¬¬ï¼˜ç« ã€€ã‚³ãƒ¼ãƒ‰ã¨XAMLã®èª¿å’Œ"
+                },
+                new HeadingItem()
+                {
+                    Id = "036",
+                    BookId = "6",
+                    Title = "ç¬¬ï¼™ç« ã€€ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ å›ºæœ‰ã®APIã®å‘¼ã³å‡ºã—"
+                },
+                new HeadingItem()
+                {
+                    Id = "037",
+                    BookId = "6",
+                    Title = "ç¬¬10ç« ã€€XAMLãƒãƒ¼ã‚¯ã‚¢ãƒƒãƒ—æ‹¡å¼µ"
                 }
+
+
+
+
 
             );
         }

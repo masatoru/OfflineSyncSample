@@ -162,13 +162,15 @@
   <ItemGroup>
     <Compile Include="App_Start\Startup.MobileApp.cs" />
     <Compile Include="Controllers\BookItemController.cs" />
+    <Compile Include="Controllers\HeadingItemController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DataObjects\BookItem.cs" />
-    <Compile Include="Migrations\201705260345137_First.cs" />
-    <Compile Include="Migrations\201705260345137_First.Designer.cs">
-      <DependentUpon>201705260345137_First.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DataObjects\HeadingItem.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\201705260927125_First.cs" />
+    <Compile Include="Migrations\201705260927125_First.Designer.cs">
+      <DependentUpon>201705260927125_First.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\MobileServiceContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -189,8 +191,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705260345137_First.resx">
-      <DependentUpon>201705260345137_First.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705260927125_First.resx">
+      <DependentUpon>201705260927125_First.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -27,6 +27,7 @@ namespace OfflineBackendSample.Models
         }
 
         public DbSet<BookItem> BookItems { get; set; }
+        public DbSet<HeadingItem> HeadingItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

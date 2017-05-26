@@ -13,7 +13,7 @@ namespace OfflineBackendSample.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201705260345137_First"; }
+            get { return "201705260927125_First"; }
         }
         
         string IMigrationMetadata.Source

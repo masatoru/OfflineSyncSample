@@ -7,15 +7,11 @@
     prism:ViewModelLocator.AutowireViewModel="True"
     xmlns:b="clr-namespace:BlueMonkey;assembly=OfflineSyncSample"
     x:Class="OfflineSyncSample.Views.MainPage"
-    xmlns:controls="clr-namespace:OfflineSyncSample.Controls;assembly=OfflineSyncSample"
     Title="MainPage"
     Padding="10,20,10,10">
     <ContentPage.Behaviors>
         <behavior:NotifyNavigationBehavior />
     </ContentPage.Behaviors>
-    <controls:CustomIndicator
-        IsVisible="{Binding CustomIsVisible}"
-        VerticalOptions="FillAndExpand" />
     <StackLayout
         Orientation="Vertical">
         <ListView

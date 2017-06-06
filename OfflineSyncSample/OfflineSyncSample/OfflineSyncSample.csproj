@@ -48,10 +48,6 @@
     <Compile Include="BlueMonkey\BehaviorBase.cs" />
     <Compile Include="BlueMonkey\EventToCommandBehavior.cs" />
     <Compile Include="BlueMonkey\ItemSelectedToCommandBehavior.cs" />
-    <Compile Include="Models\IHtmlPath.cs" />
-    <Compile Include="Controls\CustomIndicator.xaml.cs">
-      <DependentUpon>CustomIndicator.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -61,11 +57,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\CustomIndicator.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WebResources\sample_Spinner.html" />
-    <EmbeddedResource Include="WebResources\sample_Spinner.css" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MainPage.xaml">
@@ -150,8 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BlueMonkey\" />
-    <Folder Include="Controls\" />
-    <Folder Include="WebResources\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
